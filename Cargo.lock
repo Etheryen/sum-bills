@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "sum-bill"
+name = "sum-bills"
 version = "0.1.0"

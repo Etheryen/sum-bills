@@ -1,4 +1,4 @@
-# sum-bill
+# sum-bills
 
 Sums all your bills if you keep them in a file in this format:
 
