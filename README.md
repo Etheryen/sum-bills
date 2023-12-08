@@ -9,7 +9,8 @@ Bills start:
 -9.25€ borrowed from mark
 ```
 
-Usage:
-`cargo run -- STRING FILE`
-STRING: line after which to sum all bills
+## Usage:
+
+`cargo run -- STRING FILE`\
+STRING: line after which to sum all bills\
 FILE: has a section after STRING with lines that begin with numbers
