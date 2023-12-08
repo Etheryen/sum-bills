@@ -9,8 +9,17 @@ Bills start:
 -9.25€ borrowed from mark
 ```
 
-## Usage:
+## Usage
 
-`cargo run -- STRING FILE`\
+```sh
+cargo run -- STRING FILE
+```
+
 STRING: line after which to sum all bills\
 FILE: has a section after STRING with lines that begin with numbers
+
+## Example
+
+```sh
+cargo run -- "Bills start:" ~/personal/finances/Bills.md
+```
