@@ -1,6 +1,7 @@
 use crate::parsing::parse_line;
 use color_eyre::eyre::{eyre, ContextCompat, Result};
 use itertools::Itertools;
+use parsing::get_currency;
 
 mod parsing;
 
@@ -26,9 +27,13 @@ fn main() -> Result<()> {
         return Err(eyre!("No bills found"));
     }
 
-    let sum = lines.into_iter().map(parse_line).sum::<Result<f64>>()?;
+    let sum = lines
+        .iter()
+        .map(|&line| parse_line(line))
+        .sum::<Result<f64>>()?;
+    let currency = get_currency(lines).unwrap_or(String::from(""));
 
-    println!("Sum is: {}", sum);
+    println!("Sum is {}{}", sum, currency);
 
     Ok(())
 }
