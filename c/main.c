@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
   if (argc < 3) {
-    fprintf(stderr, "Bad usage\n");
+    fprintf(stderr, "bad usage\n");
     return 1;
   }
 
@@ -17,6 +17,10 @@ int main(int argc, char *argv[]) {
 
   char buf[BUFSIZ];
   FILE *f = fopen(file_name, "r");
+  if (!f) {
+    perror("error opening file");
+    return 1;
+  }
 
   while (fgets(buf, sizeof(buf), f) && strncmp(buf, section, section_len))
     ;
